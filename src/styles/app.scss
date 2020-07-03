@@ -1,5 +1,16 @@
-@import '~bootstrap/dist/css/bootstrap.css';
+// @import '~bootstrap/dist/css/bootstrap.css';
 
-// @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-size: 0.875rem;
+}
+
+.button {
+  @apply px-3 py-1 text-white bg-primary rounded outline-none;
+  &:focus {
+    @apply outline-none shadow-outline;
+  }
+}

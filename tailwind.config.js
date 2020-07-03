@@ -2,6 +2,12 @@ module.exports = {
   prefix: "",
   important: false,
   separator: ":",
+  target: 'ie11',
+  purge: [
+    './src/**/*.html',
+    './src/**/*.vue',
+    './src/**/*.jsx',
+  ],
   theme: {
     extend: {
       colors: {

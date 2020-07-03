@@ -1,7 +1,11 @@
 <template>
   <section>
     <Message :msg="msg" />
-    <button class="btn btn-primary" type="button" @click="onClick">
+    <button
+      class="button"
+      type="button"
+      @click="onClick"
+    >
       change msg
     </button>
   </section>
