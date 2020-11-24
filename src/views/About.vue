@@ -1,5 +1,14 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <Header title="about page" />
+  <p>姓名：JaxBBLL</p>
+  <p>性别：{{ $dict(gender, 'gender') }}</p>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      gender: 0
+    }
+  }
+}
+</script>
