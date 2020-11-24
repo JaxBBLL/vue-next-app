@@ -1,18 +1,34 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>home page</h1>
+  <div>
+    <Message :msg="msg" />
+    <button type="button" @click="onClick">change msg</button>
   </div>
+  <p>性别：{{ $dict(gender, 'gender') }}</p>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import { ref } from 'vue'
+import Message from '@/components/Message.vue'
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Message
+  },
+  setup() {
+    const msg = ref('Welcome to Your Vue.js App')
+    const onClick = () => {
+      msg.value = 'clicked button'
+    }
+    return {
+      onClick,
+      msg
+    }
+  },
+  data() {
+    return {
+      gender: 0
+    }
   }
 }
 </script>
