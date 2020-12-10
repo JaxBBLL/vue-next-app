@@ -1,16 +1,13 @@
 <template>
-  <transition name="fade" appear @after-leave="handleAfterLeave">
-    <div class="wrap" @click.stop="close" v-if="visiable">
-      <div class="content" @click.stop>
-        <img :src="url" />
-        <i class="close" @click.stop="close">&times;</i>
-      </div>
+  <transition name="transition" appear @after-leave="handleAfterLeave">
+    <div class="wrap" v-if="visiable" @click.stop="close">
+      <img :src="url" />
     </div>
   </transition>
 </template>
 <script>
-import { reactive, toRefs } from 'vue'
-export default {
+import { defineComponent, reactive, toRefs } from 'vue'
+export default defineComponent({
   name: 'PhotoView',
   props: {
     url: {
@@ -37,21 +34,21 @@ export default {
       handleAfterLeave
     }
   }
-}
+})
 </script>
 <style lang="less" scoped>
-.fade-enter {
+.transition-enter {
   opacity: 0;
 }
-.fade-enter-active {
+.transition-enter-active {
   opacity: 0;
 }
-.fade-enter-to,
-.fade-leave {
+.transition-enter-to,
+.transition-leave {
   opacity: 1;
   transition: all 0.3s ease-out;
 }
-.fade-leave-to {
+.transition-leave-to {
   opacity: 0;
 }
 .wrap {
@@ -67,24 +64,11 @@ export default {
   z-index: 3000;
   transition: all 0.3s;
   font-size: 14px;
-  .content {
-    position: relative;
-    display: flex;
-    max-width: 80vw;
-    max-height: 80vh;
-    text-align: center;
-  }
   img {
-    max-width: 100%;
+    max-width: 80%;
+    max-height: 80%;
     object-fit: contain;
-  }
-  .close {
-    position: absolute;
-    right: -30px;
-    top: -30px;
-    color: #fff;
-    font-size: 2.2em;
-    cursor: pointer;
+    cursor: zoom-out;
   }
 }
 </style>

@@ -1,15 +1,11 @@
-import Vant from './vant'
-import custom from './custom'
+import useVant from './useVant'
+import useCustom from './useCustom'
 
 function install(app) {
-  var components = [Vant, custom]
-  components.forEach(function(item) {
-    if (item.install) {
-      app.use(item)
-    }
-  })
+  useVant(app)
+  useCustom(app)
 }
 
 export default {
-  install: install
+  install
 }

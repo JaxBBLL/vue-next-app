@@ -1,6 +1,5 @@
-import { defineComponent, createVNode, render } from 'vue'
-import Main from './Main'
-const PhotoViewConstructor = defineComponent(Main)
+import { createVNode, render } from 'vue'
+import PhotoViewConstructor from './main'
 
 const PhotoView = function(url) {
   const options = { url }
