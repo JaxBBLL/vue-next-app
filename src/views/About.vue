@@ -1,6 +1,6 @@
 <template>
   <Header title="about page" />
-  <p>姓名：JaxBBLL</p>
+  <p class="text-primary">姓名：JaxBBLL</p>
   <p>性别：{{ $dict(gender, 'gender') }}</p>
 </template>
 <script>

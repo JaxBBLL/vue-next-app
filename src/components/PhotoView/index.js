@@ -1,5 +1,5 @@
 import { createVNode, render } from 'vue'
-import PhotoViewConstructor from './main'
+import PhotoViewConstructor from './Main'
 
 const PhotoView = function(url) {
   const options = { url }

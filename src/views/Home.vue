@@ -2,7 +2,7 @@
   <Header title="home page" />
   <div>
     <Message :msg="msg" :time="Date.now()" />
-    <button type="button" @click="onClick">change</button>
+    <van-button type="primary" @click="onClick">change</van-button>
   </div>
   <p>
     <img @click="$photoview(src)" :src="src" width="100" class="img" />
